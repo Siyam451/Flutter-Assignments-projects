@@ -1,0 +1,53 @@
+
+import 'package:flutter/material.dart';
+
+class Module10assignment extends StatelessWidget {
+  const Module10assignment({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        title: Text('Greeting App'),
+      ),
+
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text('Hello,World!',style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold,color: Colors.red),),
+            SizedBox(height: 10,),
+
+            Text('Welcome to Flutter!',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color: Colors.black),),
+
+            SizedBox(
+              height: 10,
+            ),
+            Image.network('https://img.icons8.com/color/512/flutter.png',height: 150,width: 250,),
+SizedBox(
+  height: 10,
+),
+            ElevatedButton(onPressed: (){
+
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(content: Text('Button pressed'))
+              );
+            },
+
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.green,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  )
+                ),
+
+                child: Text('Press me'))
+
+          ],
+        ),
+      )
+
+    );
+  }
+}
