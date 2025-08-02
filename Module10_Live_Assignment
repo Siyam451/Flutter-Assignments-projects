@@ -1,0 +1,60 @@
+import 'package:flutter/material.dart';
+
+class Module10LiveAssignment extends StatelessWidget {
+  const Module10LiveAssignment({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.purple.shade50,
+      appBar: AppBar(
+        backgroundColor:  Colors.purple.shade50,
+        title: Text('Add Employee',style: TextStyle(fontSize: 25),),
+      ),
+      body: Column(
+        children: [
+
+         TextFormField(
+           decoration: InputDecoration(
+             hintText: 'Name',
+             border:UnderlineInputBorder(),
+           ),
+         ),
+          SizedBox(height: 10,),
+
+          TextFormField(
+            keyboardType: TextInputType.phone,
+            decoration: InputDecoration(
+              hintText: 'Age',
+                border:UnderlineInputBorder(),
+            ),
+          ),
+          SizedBox(height: 10,),
+
+          TextFormField(
+            keyboardType: TextInputType.phone,
+            decoration: InputDecoration(
+              hintText: 'Salary',
+                border:UnderlineInputBorder(),
+            ),
+          ),
+          SizedBox(height: 20,),
+
+          ElevatedButton(onPressed: (){
+            ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Added successfully')));
+          },
+              style: ElevatedButton.styleFrom(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(14),
+
+                ),
+                backgroundColor: Colors.purple.shade100,
+                foregroundColor: Colors.purple,
+              ),
+              child: Text('Add Employee',))
+        ],
+      ),
+
+    );
+  }
+}
